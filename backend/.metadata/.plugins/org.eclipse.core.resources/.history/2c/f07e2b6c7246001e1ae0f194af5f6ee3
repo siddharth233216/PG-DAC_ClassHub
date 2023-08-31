@@ -1,0 +1,8 @@
+package com.app.service;
+
+import com.classhub.dto.Coursedto;
+
+public interface CourseService {
+
+	boolean addCourse(Coursedto new_course);
+}

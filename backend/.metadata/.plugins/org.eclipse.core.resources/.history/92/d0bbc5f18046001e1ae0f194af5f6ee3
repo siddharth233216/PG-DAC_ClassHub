@@ -1,0 +1,13 @@
+package com.classhub.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.classhub.entities.Course;
+import java.lang.String;
+import java.util.List;
+import java.util.Optional;
+
+public interface CourseRepository extends JpaRepository<Course, Long>{
+	Optional<List<Course>> findByBatch(String batch);
+
+}

@@ -1,0 +1,30 @@
+package com.classhub.service;
+
+import javax.transaction.Transactional;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.classhub.dto.Coursedto;
+import com.classhub.entities.Course;
+import com.classhub.repository.CourseRepository;
+
+@Service
+@Transactional
+public class CourseServiceImpl implements CourseService {
+	
+	@Autowired
+	CourseRepository courserepo;
+	
+	@Autowired 
+	ModelMapper mapper;
+
+	@Override
+	public boolean addCourse(Coursedto new_course) {
+		// TODO Auto-generated method stub
+		Course newCourse = mapper.map(new_course, Course.class);
+		courserepo.save(newCourse);
+	}
+
+}

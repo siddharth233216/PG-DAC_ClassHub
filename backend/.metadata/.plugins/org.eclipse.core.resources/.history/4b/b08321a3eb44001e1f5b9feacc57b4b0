@@ -1,0 +1,44 @@
+package com.classhub.entities;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.*;
+
+import lombok.*;
+
+
+
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+
+@Entity
+@Table(name = "Courses")
+public class Course {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long Id;
+	@Column(name="Type",nullable=false,unique=true)
+	private String Type;
+	@Column(nullable=false,unique=true)
+	private String batch;
+	@Column(nullable=false)
+	private Status status=Status.NOT_YET_STARTED;
+	@OneToMany(mappedBy = "Course_id")
+	private List<Subject> subjects = new ArrayList<>();
+	@OneToMany(mappedBy = "selected_course")
+	private List<Student> students = new ArrayList<>();
+	private LocalDate startDate;
+	private LocalDate endDate;
+	
+	public void addSubject(Subject new_subject) {
+		subjects.add(new_subject);
+		this.students.forEach(s->s.getSubjects().add(new_subject));
+		
+	}
+
+}

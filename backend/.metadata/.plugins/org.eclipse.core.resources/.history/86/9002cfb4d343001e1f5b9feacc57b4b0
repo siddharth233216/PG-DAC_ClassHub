@@ -1,0 +1,10 @@
+package com.classhub.entities;
+
+public class User {
+private Long Id;
+private String firstname;
+private String lastname;
+private String email;
+private long mobile;
+private String password;
+}

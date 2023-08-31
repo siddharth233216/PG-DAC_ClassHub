@@ -1,0 +1,22 @@
+package com.classhub;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ClasshubApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ClasshubApplication.class, args);
+	}
+
+	
+	@Bean // <bean id , class , scope ...../>
+	public ModelMapper myModelMapper() {
+		ModelMapper mapper = new ModelMapper();
+		mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+		// set property matching convention between DTO n entity : as strict
+		return mapper; // config class method rets --> model mapper instance to SC --it will be managed
+						// as spring bean by SC
+	}
+}

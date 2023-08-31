@@ -1,0 +1,13 @@
+package com.classhub.entities;
+
+import java.time.LocalDate;
+
+public class Subject {
+ private LocalDate Startdate;
+ private LocalDate EndDate;
+ private Status subjectStatus;
+ 
+ public void setStatus() {
+	 
+ }
+}

@@ -1,0 +1,30 @@
+package com.classhub.entities;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import lombok.*;
+
+
+
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class Course {
+	private Long Id;
+	private String name;
+	private String batch;
+	private Status status;
+	private List<Subject> subjects = new ArrayList<>();
+	private LocalDate startDate;
+	private LocalDate endDate;
+	
+	public void addSubject(Subject new_subject) {
+		subjects.add(new_subject);
+		
+	}
+
+}

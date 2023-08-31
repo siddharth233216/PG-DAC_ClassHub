@@ -1,0 +1,26 @@
+package com.classhub.controller;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.classhub.dto.AuthRequest;
+
+@RestController
+@RequestMapping("/admin")
+public class AdminController {
+	
+	
+	@PostMapping("/home")
+	public ResponseEntity<?> adminHome(@RequestHeader("Authorization") String authorizationHeader,@RequestBody AuthRequest dto) {
+		if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
+			String jwtToken = authorizationHeader.substring(7);
+		}
+		
+		return ResponseEntity();
+		
+	}
+}

@@ -1,0 +1,5 @@
+package com.classhub.entities;
+
+public enum Course_type {
+DAC,DBDA,DITISS;
+}

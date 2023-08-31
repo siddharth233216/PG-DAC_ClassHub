@@ -1,0 +1,45 @@
+package com.classhub.entities;
+
+import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+
+public class Student extends User {
+	
+private long Roll_no;
+private Placement status=Placement.NOT_PLACED;
+private LocalDate dob;
+private long PRN;
+private Set <Subject> Subjects = new HashSet<>();
+
+
+@Override
+public int hashCode() {
+	return Objects.hash(PRN, Roll_no);
+}
+@Override
+public boolean equals(Object obj) {
+	if (this == obj)
+		return true;
+	if (obj == null)
+		return false;
+	if (getClass() != obj.getClass())
+		return false;
+	Student other = (Student) obj;
+	return PRN == other.PRN && Roll_no == other.Roll_no;
+}
+
+
+
+}

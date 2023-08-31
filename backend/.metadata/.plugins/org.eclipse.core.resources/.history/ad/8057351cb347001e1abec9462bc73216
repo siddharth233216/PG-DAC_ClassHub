@@ -1,0 +1,31 @@
+package com.classhub.service;
+
+import javax.transaction.Transactional;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.classhub.custom_exceptions.ResourceNotFoundException;
+import com.classhub.dto.Userdto;
+import com.classhub.entities.User;
+import com.classhub.repository.UserRepository;
+
+@Service
+@Transactional
+public class UserServiceImpl implements UserService{
+
+	@Autowired
+	UserRepository userrepo;
+	
+	@Autowired
+	ModelMapper mapper;
+	
+	
+	@Override
+	public Userdto getUser(String email) {
+		User user = userrepo.findByEmail(email).orElseThrow(()-> new ResourceNotFoundException("USer Not Found"));
+		return mapper.map(user, Userdto.class);
+	}
+
+}

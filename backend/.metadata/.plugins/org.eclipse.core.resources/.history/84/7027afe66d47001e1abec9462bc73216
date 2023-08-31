@@ -1,0 +1,26 @@
+package com.classhub.service;
+
+import javax.transaction.Transactional;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.classhub.repository.CourseRepository;
+import com.classhub.repository.StudentRepo;
+
+@Transactional
+@Service
+public class StudentServiceImpl {
+	
+	@Autowired
+	StudentRepository studentrepo;
+	
+	@Autowired
+	ModelMapper mapper;
+	
+	@Autowired
+	CourseRepository
+	
+
+}

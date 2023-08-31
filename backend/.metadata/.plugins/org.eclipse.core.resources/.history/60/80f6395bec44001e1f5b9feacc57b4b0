@@ -1,0 +1,49 @@
+package com.classhub.entities;
+
+import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
+
+import javax.persistence.*;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+
+
+@Entity
+public class Subject {
+	
+ private Long Id;
+ private String name;
+ private LocalDate Startdate;
+ private LocalDate EndDate;
+ private Status subjectStatus;
+ private Course course_id;
+ private Set <Student> student_list = new HashSet<>();
+@Override
+public int hashCode() {
+	return Objects.hash(name);
+}
+@Override
+public boolean equals(Object obj) {
+	if (this == obj)
+		return true;
+	if (obj == null)
+		return false;
+	if (getClass() != obj.getClass())
+		return false;
+	Subject other = (Subject) obj;
+	return Objects.equals(name, other.name);
+}
+ 
+ 
+ 
+}

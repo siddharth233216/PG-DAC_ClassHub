@@ -1,0 +1,5 @@
+package com.classhub.repository;
+
+public interface CourseRepository {
+
+}

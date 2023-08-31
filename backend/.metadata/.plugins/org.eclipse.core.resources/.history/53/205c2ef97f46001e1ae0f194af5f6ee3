@@ -1,0 +1,13 @@
+package com.classhub.service;
+
+import com.classhub.dto.ApiResponse;
+import com.classhub.dto.Coursedto;
+
+public interface CourseService {
+
+	Coursedto addCourse(Coursedto new_course);
+
+	ApiResponse deleteCourse(Long course_id);
+
+	List<Coursedto> getCourses(int batch_id);
+}

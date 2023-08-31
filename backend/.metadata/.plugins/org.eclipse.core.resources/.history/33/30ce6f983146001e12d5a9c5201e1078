@@ -1,0 +1,5 @@
+package com.classhub.controller;
+
+public class AdminController {
+
+}

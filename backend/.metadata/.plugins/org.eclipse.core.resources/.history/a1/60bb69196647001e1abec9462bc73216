@@ -1,0 +1,34 @@
+package com.classhub.dto;
+
+import java.time.LocalDate;
+
+import com.classhub.entities.Placement;
+import com.classhub.entities.Role;
+
+public class Studentdto {
+
+	private String firstname;
+
+	private String lastname;
+
+	private String email;
+
+	private long mobile;
+
+	private String password;
+
+	private Role role = Role.STUDENT;
+	
+	
+	private long Roll_no;
+	
+	
+	private Placement status = Placement.NOT_PLACED;
+
+	private LocalDate dob;
+
+	private long PRN;
+	
+	private long Course_id;
+
+}

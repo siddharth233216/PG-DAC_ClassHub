@@ -1,0 +1,6 @@
+package com.classhub.entities;
+
+public class Student extends User {
+private long Roll_no;
+private Placement status;
+}

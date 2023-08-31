@@ -1,0 +1,5 @@
+package com.classhub.custom_exceptions;
+
+public class CustomException {
+
+}

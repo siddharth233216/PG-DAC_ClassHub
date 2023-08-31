@@ -1,0 +1,15 @@
+package com.classhub.entities;
+
+import java.time.LocalDate;
+
+import lombok.*;
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class Subject {
+ private LocalDate Startdate;
+ private LocalDate EndDate;
+ private Status subjectStatus;
+ 
+}

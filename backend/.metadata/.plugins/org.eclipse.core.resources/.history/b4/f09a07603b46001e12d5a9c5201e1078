@@ -1,0 +1,23 @@
+import javax.persistence.*;
+import java.io.Serializable;
+
+@Entity
+@Table(name = "student_subject")
+public class Student_subject implements Serializable {
+
+    @EmbeddedId
+    private Student_subjectId id = new Student_subjectId();
+
+    @ManyToOne
+    @MapsId("studentId")
+    private Student student;
+
+    @ManyToOne
+    @MapsId("subjectId")
+    private Subject subject;
+
+    private int exam;
+    private int attendance;
+
+    // Constructors, getters, setters
+}

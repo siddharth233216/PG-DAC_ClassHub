@@ -1,0 +1,7 @@
+package com.classhub.service;
+
+import com.classhub.dto.ApiResponse;
+
+public interface StudentService {
+	ApiResponse addStudent(Studentdto new_student);
+}
